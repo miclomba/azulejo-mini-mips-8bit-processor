@@ -18,45 +18,36 @@ The instruction set contains:
 
 ### R-Type Instructions
 
-- and: $rd = $rd & $rx
-- or: $rd = $rd | $rx
-- not: $rd = ($rx)`
-- xor: $rd = $rd ^ $rx
-- add: $rd = $rd + $rx
-- neg: $rd = -($rx)
-- sll: $rd = $rx << 1 (shift left logical)
-- sla: $rd = $rx \* 2 (shift left arithmetic)
+```
+and:    $rd = $rd & $rx
+or:     $rd = $rd | $rx
+not:    $rd = ($rx)`
+xor:    $rd = $rd ^ $rx
+add:    $rd = $rd + $rx
+neg:    $rd = -($rx)
+sll:    $rd = $rx << 1      (shift left logical)
+sla:    $rd = $rx \* 2      (shift left arithmetic)
+```
 
 ### I-Type Instructions
 
 - lui (load upper immediate):
-
-* Loads an immediate value into the upper bits of a register.
-
+  Loads an immediate value into the upper bits of a register.
 - sw (store word):
-
-* Stores the value from a register into memory at an address offset.
-
+  Stores the value from a register into memory at an address offset.
 - lw (load word):
-
-* Loads a value from memory into a register using an immediate offset.
-
+  Loads a value from memory into a register using an immediate offset.
 - ori (bitwise OR immediate):
-
-* Performs a bitwise OR between a register and an immediate value.
-
+  Performs a bitwise OR between a register and an immediate value.
 - disp (display):
-
-* See the section on the 7-segment display, below.
+  See the section on the 7-segment display, below.
 
 See ![design.pdf](./docs/Design.pdf) for more details about the ISA.
 
 ### J-Type Instructions
 
 - jump instruction
-
-* jump instruction has 5-bit address. The address(5-bit) will be concatenated with the upper 3 bits of current value of PC.
-
+  The jump instruction has 5-bit address. The address(5-bit) will be concatenated with the upper 3 bits of current value of PC.
 - beg instruction
 
 ```
