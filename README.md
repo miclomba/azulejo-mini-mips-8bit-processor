@@ -28,7 +28,7 @@ xor:    $rd = $rd ^ $rx
 add:    $rd = $rd + $rx
 neg:    $rd = -($rx)
 sll:    $rd = $rx << 1      (shift left logical)
-sla:    $rd = $rx \* 2      (shift left arithmetic)
+sla:    $rd = $rx * 2       (shift left arithmetic)
 ```
 
 ### I-Type Instructions
