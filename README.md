@@ -50,11 +50,9 @@ beq     -1          # branch on equals ($r0 and $r1) to the offset -1 (i.e. halt
 
 ## Prerequisites
 
-Install `logisim 2.3.2`: https://www.cburch.com/logisim/
+Install `Logisim`: https://www.cburch.com/logisim/
 
-An executable `logisim/logisim-2.3.2.jar` is provided for your convenience.
-
-Note: Your OS may refuse to run the jar file so you will need to provide an exception.
+This circuit is tested to work with `logisim-generic-2.7.1.jar`.
 
 ## Running
 
@@ -72,9 +70,10 @@ v2.0 raw
 00 40 6f 20 50 7f 31 ff
 ```
 
-Below is a sample Display-and-Halt program that can be converted to hex and loaded as a ROM image. The program loads
-`15` (`F` in hex) into register `$r0` for display. We do the same for the `$r1` register. Then we branch
-by `beq -1` (i.e. halt). The result is to display `FF` on the 7-segment display and stops the program.
+Below is a sample Display-and-Halt assembly program that can be converted to hex (see example above)
+and loaded as a ROM image. The program loads `15` (`F` in hex) into register `$r0` for display.
+We do the same for the `$r1` register. Then we branch by `beq -1` (i.e. halt). The result is to display
+`FF` on the 7-segment display and stops the program.
 
 ```
 lui     $r0, 0      # load upper 4 bits with all zeroes
