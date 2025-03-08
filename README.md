@@ -20,7 +20,17 @@ See `docs/Design.pdf` for more details about the ISA.
 
 ## Testing
 
-Here is a sample program that you can run as a basic test. The program loads `15` (in
+Tests can be loaded from Logisim as ROM images and then the CPU clock button can be used tick the
+program counter.
+
+Several tests are provided in `/rom-images` directory. For example:
+
+```
+v2.0 raw
+00 40 6f 20 50 7f 31 ff
+```
+
+Here is a sample program that you can convert to hex and load as a ROM image. The program loads `15` (in
 decimal = `F` in hex) into register `$r0` and display. We do the same for `$r1`. Then we branch
 by `beq -1` (it goes back to itself! In other words, “halt”). The result is to display `FF` on the
 7-segment display and stops the program. It is a Display-and-Halt program.
