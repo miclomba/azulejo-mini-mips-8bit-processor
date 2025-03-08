@@ -14,6 +14,8 @@ This simple 8-bit processor instruction set has two 8-bit registers (`$r0` and `
 
 Mini-MIPS has separate instruction memory and data memory. Each has maximum capacity of 256 bytes.
 
+See ![design.pdf](./docs/Design.pdf) for more details about the ISA.
+
 The instruction set contains:
 
 ### R-Type Instructions
@@ -31,30 +33,19 @@ sla:    $rd = $rx \* 2      (shift left arithmetic)
 
 ### I-Type Instructions
 
-- lui (load upper immediate):
-  Loads an immediate value into the upper bits of a register.
-- sw (store word):
-  Stores the value from a register into memory at an address offset.
-- lw (load word):
-  Loads a value from memory into a register using an immediate offset.
-- ori (bitwise OR immediate):
-  Performs a bitwise OR between a register and an immediate value.
-- disp (display):
-  See the section on the 7-segment display, below.
-
-See ![design.pdf](./docs/Design.pdf) for more details about the ISA.
+```
+lui     $r0, 0      # load upper immediate 4 bits of $r0 with all zeroes
+sw      $r0, 0      $ store word in $r0 into memory at 0 address offset
+lw      $r0, 0      $ load word from memory at 0 address offset into $r0
+ori     $r1, 15     # bitwise or immediate between $r1 and 15 (F in hex)
+disp    $r0, 0      # display the content of $r0 on 0th display unit of the 7-segment display
+```
 
 ### J-Type Instructions
 
-- jump instruction
-  The jump instruction has 5-bit address. The address(5-bit) will be concatenated with the upper 3 bits of current value of PC.
-- beg instruction
-
 ```
-if $r0 == $r1
-    PC = (PC + 1) + offset(sign extended)
-else
-    PC = PC + 1
+jump    5           # Jump by concatenating the address(5-bit) with the upper 3 bits of current value of PC.
+beq     -1          # branch on equals ($r0 and $r1) to the offset -1 (i.e. halt in this case)
 ```
 
 ## Prerequisites
