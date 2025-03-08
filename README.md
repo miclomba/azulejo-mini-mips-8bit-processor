@@ -18,6 +18,17 @@ Mini-MIPS has separate instruction memory and data memory. Each has maximum capa
 See `docs/Design.pdf` for more details about the ISA.
 ![design.pdf](./docs/Design.pdf)
 
+## Prerequisites
+
+Install `logisim 2.3.2`.
+
+An executable `logisim/logisim-2.3.2.jar` is provided for your convenience.
+Note: Your OS may refuse to run the jar file so you will need to provide an exception.
+
+## Running
+
+Once `logisim` UI is launched, then open the `miniMips.circ` file.
+
 ## Testing
 
 Tests can be loaded from Logisim as ROM images and then the CPU clock button can be used tick the
