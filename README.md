@@ -70,8 +70,8 @@ v2.0 raw
 00 40 6f 20 50 7f 31 ff
 ```
 
-Below is a sample Display-and-Halt assembly program that can be converted to hex (see example above)
-and loaded as a ROM image. The program loads `15` (`F` in hex) into register `$r0` for display.
+Below is a sample Display-and-Halt assembly program that can be converted to hex using ![design.pdf](./docs/Design.pdf)
+(see example above) and loaded as a ROM image. The program loads `15` (`F` in hex) into register `$r0` for display.
 We do the same for the `$r1` register. Then we branch by `beq -1` (i.e. halt). The result is to display
 `FF` on the 7-segment display and stops the program.
 
