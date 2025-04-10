@@ -3,10 +3,7 @@
 An 8-bit MIPS-like single-cycle CPU.
 
 Overall design:
-![minimips.png](./screenshots/minimips.png)
-
-ALU design:
-![alu.png](./screenshots/alu.png)
+![MiniMips.gif](./assets/MiniMips.gif)
 
 ## Instruction Set Architecture
 
